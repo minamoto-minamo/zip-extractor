@@ -37,9 +37,10 @@ final class ZipEntryExtractor {
 							}
 
 							Files.createDirectories(normalized.getParent());
-							try (InputStream in = zf.getInputStream(entry);
-							     OutputStream out = Files.newOutputStream(normalized,
-									     StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE)) {
+							try (
+									InputStream in = zf.getInputStream(entry);
+									OutputStream out = Files.newOutputStream(normalized, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE)
+							) {
 								IO.copy(in, out);
 							}
 							Log.x("EXTRACT %s :: %s -> %s", absZip, entry.getName(), normalized);

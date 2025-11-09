@@ -18,7 +18,6 @@ public final class App {
 			Log.i("namePattern   : %s", config.namePattern());
 			Log.i("zipCharset    : %s", config.zipCharset());
 			Log.i("includeSubdirs: %s", config.includeSubdirs());
-			Log.i("zipGlob       : %s", config.zipGlob());
 			Log.i("zipNameFolder : %s", config.createZipNameFolder());
 
 			AtomicInteger zipCount = new AtomicInteger();

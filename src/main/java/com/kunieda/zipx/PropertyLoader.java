@@ -49,12 +49,10 @@ final class PropertyLoader {
 		Charset cs = Charset.forName(charsetName != null ? charsetName : Defaults.defaultZipCharset());
 
 		boolean includeSubdirs = parseBool(p.getProperty("includeSubdirs"), true);
-		String zipGlob = trimToNull(p.getProperty("zipGlob"));
-		if (zipGlob == null) zipGlob = "**/*.zip";
 
 		boolean zipNameFolder = parseBool(p.getProperty("createZipNameFolder"), true);
 
-		return new AppConfig(targetDir, namePattern, zipPattern, cs, includeSubdirs, zipGlob, zipNameFolder);
+		return new AppConfig(targetDir, namePattern, zipPattern, cs, includeSubdirs, zipNameFolder);
 	}
 
 	private static boolean parseBool(String s, boolean def) {

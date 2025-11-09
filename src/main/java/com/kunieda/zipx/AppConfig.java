@@ -11,23 +11,20 @@ public final class AppConfig {
 	private final Pattern zipPattern;
 	private final Charset zipCharset;
 	private final boolean includeSubdirs;
-	private final String zipGlob;
 	private final boolean createZipNameFolder;
 
 	// コンストラクタに追加
 	public AppConfig(Path targetDir,
 	                 Pattern namePattern,
-	                 Pattern zipPattern,        // ← 追加
+	                 Pattern zipPattern,
 	                 Charset zipCharset,
 	                 boolean includeSubdirs,
-	                 String zipGlob,
 	                 boolean createZipNameFolder) {
 		this.targetDir = Objects.requireNonNull(targetDir);
 		this.namePattern = Objects.requireNonNull(namePattern);
 		this.zipPattern = Objects.requireNonNull(zipPattern);
 		this.zipCharset = Objects.requireNonNull(zipCharset);
 		this.includeSubdirs = includeSubdirs;
-		this.zipGlob = Objects.requireNonNull(zipGlob);
 		this.createZipNameFolder = createZipNameFolder;
 	}
 
@@ -45,10 +42,6 @@ public final class AppConfig {
 
 	public boolean includeSubdirs() {
 		return includeSubdirs;
-	}
-
-	public String zipGlob() {
-		return zipGlob;
 	}
 
 
