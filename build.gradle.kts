@@ -9,7 +9,7 @@ repositories {
 java {
     toolchain {
         // 使いたい言語バージョンに合わせて変更可（8/11/17など）
-        languageVersion.set(org.gradle.jvm.toolchain.JavaLanguageVersion.of(8))
+        languageVersion.set(JavaLanguageVersion.of(8))
     }
 }
 
